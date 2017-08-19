@@ -213,16 +213,19 @@ func (p *CatalogProvider) getAttribute(name string, tags []string, defaultValue 
 }
 
 func (p *CatalogProvider) getContraintTags(tags []string) []string {
-	var list []string
+	/*
+		var list []string
 
-	for _, tag := range tags {
-		if strings.Index(strings.ToLower(tag), p.Prefix+".tags=") == 0 {
-			splitedTags := strings.Split(tag[len(p.Prefix+".tags="):], ",")
-			list = append(list, splitedTags...)
+		for _, tag := range tags {
+			if strings.Index(strings.ToLower(tag), p.Prefix+".tags=") == 0 {
+				splitedTags := strings.Split(tag[len(p.Prefix+".tags="):], ",")
+				list = append(list, splitedTags...)
+			}
 		}
-	}
 
-	return list
+		return list
+	*/
+	return tags
 }
 
 func (p *CatalogProvider) buildConfig(catalog []catalogUpdate) *types.Configuration {
